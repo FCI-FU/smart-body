@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "GymProfile";
+    Layout = "~/Views/Account/_profileLayout.cshtml";
+}
+<div class="col-md-6 col-xs-12">
+    <div id="lineChart"></div>
+</div>
+<div class="col-md-6 col-xs-12">
+    <div id="circleChart"></div>
+</div>
+@for (int i = 0; i < 20; i++)
+{
+    <br />
+}
+<div class="text-center"><h1> user rating </h1></div>
+<div class="col-md-offset-2 col-md-7 col-xs-12">
+    <div class="review-block">
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="row review-box">
+                <div class="col-sm-3">
+                    <img src="~/Images/avatar.png" class="img-rounded" width="100">
+                    <div class="review-block-name" style="padding-left:25px"><a href="" style="color: black; ">@ViewBag.userName[i]</a></div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="review-block-rate">
+                        @for (int j = 0; j < @ViewBag.rate[i]; j++)
+                        {
+                            <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                        }
+                        @for(int j = 0 ; j < 5 - @ViewBag.rate[i]; j++)
+                        {
+                            <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
+                        }
+                    </div>
+                    <div class="review-block-description">@ViewBag.comment[i]</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

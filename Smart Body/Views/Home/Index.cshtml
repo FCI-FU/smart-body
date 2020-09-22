@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!--start Section Carousel -->
+<section class="carousel-">
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="" contenteditable="false"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class="active" contenteditable="false"></li>
+            <li data-target="#myCarousel" data-slide-to="2" class="" contenteditable="false"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+            <div class="item">
+                <div style="background-image: url(/Images/Slider/1.jpg);" class="slider-size slider-img"></div>
+            </div>
+            <div class="item active">
+                <div style="background-image: url(/Images/Slider/2.jpg);" class="slider-size slider-img"></div>
+            </div>
+            <div class="item">
+                <div style="background-image: url(/Images/Slider/3.jpg);" class="slider-size slider-img"></div>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</section>
+<!--end Section Carousel -->
+
+<!-- start section about -->
+<section class="about text-center">
+    <div class="container wow bounceIn" data-wow-duration="3s">
+        <h1>join our sportive page <span>Smart</span> <span>Body</span></h1>
+        <p class="lead">
+            hello our new visitor let me introduce our page specialized for <strong>Gyms </strong>wish join us
+            <br>
+            <br>
+        </p>
+    </div>
+</section>
+<!--end section about -->
+
+<!--start section Services -->
+<section id="Services" class="features text-center" style="padding-top: 50px">
+    <div class="container">
+        <h1>Our Services </h1>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="feat wow bounceInUp" data-wow-duration="1s">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <h4>contact your country's Gyms </h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic  </p>
+                    <input class="btn btn-primary" type="button" onclick="@Url.Action("Book", "Service")" value="Book Now !" />
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="feat wow bounceInDown" data-wow-duration="1s">
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                    <h4>contact your country's Gyms </h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 	survived not only five centuries, but also the leap into electronic  </p>
+                    <input class="btn btn-primary" type="button" onclick="@Url.Action("Ask", "Service")" value="Ask a Trainer !" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end section features-->
+<!--start section our team -->
+<section class="our_team text-center">
+    <div class="team">
+        <div class="container-fluid">
+            <h1>Meet our wonderful team</h1>
+            <div class="row">
+                <div class="col-sm-4 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/Team/yoomna.jpg " alt="Yomna" height="150" />
+                    </div>
+                    <h3>Yomna Hosny </h3>
+                </div>
+
+                <div class="col-sm-4 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/Team/asmaa.png " alt="Asmaa" height="150" />
+                    </div>
+                    <h3>Asmaa KHaled </h3>
+                </div>
+
+                <div class="col-sm-4 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/Team/abd_a.jpg " alt="Abdalrahman" height="150" />
+                    </div>
+                    <h3>Abd el Rahman </h3>
+                </div>
+                <div class="col-sm-4 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/Team/badr.jpg " alt="Badr" height="150" />
+                    </div>
+                    <h3>Badr Mohamed </h3>
+                </div>
+
+                <div class="col-sm-4 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/Team/hasan.jpg " alt="Hasan" height="150" />
+                    </div>
+                    <h3>Hassan Abd el Rahman </h3>
+                </div>
+                <div class="col-sm-4 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/Team/hasan.jpg " alt="Hasan" height="150" />
+                    </div>
+                    <h3>Kerolous Girgis</h3>
+                </div>
+            </div>
+            <br /><br />
+        </div>
+    </div>
+</section>
+<!--End Section our Team -->
+<!-- Start Section Subscribe -->
+<section class="subscribe">
+    <div class="container text-center wow fadeInUp" data-wow-duration="1s">
+        <h2 class="h1">Keep In Touch</h2>
+        <p class="lead">Subscribe To Get All New Offers, Dont Worry About Spam We Hate It Too.</p>
+        
+        <div class="form-inline col-md-6 col-md-offset-3">
+            <input id="submail" class="form-control input-lg" type="text" placeholder="Write Your Email">
+            <button id="subBtn" class="btn btn-primary btn-lg">Subscribe</button>
+        </div>
+    </div>
+</section>
+<!-- End Section Subscribe -->
+<!-- Strat Section Contact Us -->
+<section class="contact-us text-center">
+    <div class="fields">
+        <div class="container">
+            <div class="row contact">
+                <i class="glyphicon glyphicon-phone-alt" style="font-size: 55px; padding-top: 20px;"></i>
+                <h2 class="h1">Tell Us What You Fell</h2>
+                <p class="lead">Feel Free To Contact Us Anytime</p>
+                <!-- Start Contact Form -->
+                <div class="col-md-6 wow bounceInLeft" data-wow-duration="1s">
+                    <div class="form-group">
+                        <input id="UserContact" type="text"  class="form-control input-lg" placeholder="Username" />
+                    </div>
+                    <div class="form-group">
+                        <input id="EmailContact" type="text"  class="form-control input-lg" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input id="PhoneContact" type="text"  class="form-control input-lg" placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="col-md-6 wow bounceInRight" data-wow-duration="1s">
+                    <div class="form-group">
+                        <textarea id="MsgContact"  class="form-control input-lg" style="height: 95px;" placeholder="Your Message ..."></textarea>
+                    </div>
+                    <button ID="SendBtn"  type="button" class="btn btn-primary btn-lg btn-block"  data-toggle="modal" data-target="#Package" >Contact Us</button>
+                </div>
+
+                <!-- End Contact Form -->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Section Contact Us -->

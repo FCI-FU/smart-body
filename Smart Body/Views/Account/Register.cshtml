@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container-fluid well form-horizontal" id="contact_form">
+    <div class="form-reg">
+        <fieldset class="form-body">
+            <!-- Form Name -->
+            <h2 class="text-center"><b>Registration</b></h2>
+            <br>
+
+            <!-- Text input-->
+            <form method="post" action="Register">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Full Name</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="InputFullName" name="Name" placeholder="Full Name" class="form-control" type="text" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Username</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="InputUseName" name="userName" placeholder="Username" class="form-control" type="text" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Password</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="InputPassword" name="password" placeholder="Password" class="form-control" type="password" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Confirm Password</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="ReInputPassword" name="confirmPassword" placeholder="Confirm Password" class="form-control" type="password">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input id="InputEmail" name="email" placeholder="E-Mail Address" class="form-control" type="email" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Contact No.</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="InputPhone" name="contactNo" placeholder="(+20)" class="form-control" type="text" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group text-center" onclick="ShowHide_Func()">
+                    <label>
+                        <input name="hasGym" id="Check" type="checkbox" value="true" class="lead" onclick="ShowHide_Func()">Gym Owner ?
+                    </label>
+                </div>
+                <div class="form-group" style="display: none;" id="gymName">
+                    <label class="col-md-4 control-label">Gym Name</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                            <input id="InputGymName" name="gymName" type="text" class="form-control" placeholder="Gym Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="display: none;" id="gymLocation">
+                    <label class="col-md-4 control-label">Gym Location</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                            <input id="InputGymLocation" name="gymLocation" type="text" class="form-control" placeholder="Gym Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="display: none;" id="gymPhone">
+                    <label class="col-md-4 control-label">Gym Phone</label>
+                    <div class="col-md-4 col-xs-12 inputGroupContainer">
+                        <div class="input-group" style="width: 300px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="InputGymPhone" name="gymPhone" type="text" placeholder="(+20)" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-sm-offset-5 col-xs-offset-3">
+                        <button id="SubmitReg" type="submit" class="btn btn-primary">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center">
+                <span style="font-size:18px; color:black">
+                    Have an account?
+                </span>
+                <a href="@Url.Action("Login" ,"Account")" style="font-size:16px; color:#BBB">
+                    Login
+                </a>
+            </div>
+        </fieldset>
+        <div class="container text-center"  id="msgID" style="padding-top: 15px;max-width:550px;">
+        </div>
+    </div>
+</div>
+@if (ViewBag.errorMessag != null)
+{
+    <script>
+        window.onload = function () {
+            alert("@ViewBag.errorMessag");
+        }
+    </script>
+}
+
+<script>
+    function ShowHide_Func() {
+        var check = document.getElementById("Check");
+        var div1 = document.getElementById("gymName");
+        var div2 = document.getElementById("gymLocation");
+        var div3 = document.getElementById("gymPhone");
+        if (check.checked == true) {
+            div1.required = true;
+            div2.required = true;
+            div3.required = true;
+            div1.style.display = "block";
+            div2.style.display = "block";
+            div3.style.display = "block";
+        } else {
+            div1.required = false;
+            div2.required = false;
+            div3.required = false;
+            div1.style.display = "none";
+            div2.style.display = "none";
+            div3.style.display = "none";
+        }
+
+    }
+</script>

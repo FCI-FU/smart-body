@@ -1,0 +1,8 @@
+﻿@if (true) {
+    <li><a id="login" href="@Url.Action("Login", "Account")">Login</a></li>
+    <li><a id="register" href="@Url.Action("Register", "Account")">Register</a></li>
+}
+else{
+    <li><a id="profile" href="@Url.Action("GymStatistic", "Account")">@ViewBag.Name</a></li>
+    <li><a id="logOut" href="@Url.Action("Index", "Home")">Log out</a></li>
+}

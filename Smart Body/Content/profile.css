@@ -1,0 +1,68 @@
+﻿html, body , .content{
+  min-height: 100vh
+}
+.sidebar {
+  background-color: #222222;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    background-color: #222222;
+    padding-top:30px
+  }
+}
+
+.avatar {
+    background: rgba(0,0,0,0.1);
+    padding: 2em 0.5em;
+    text-align: center;
+}
+
+.avatar > h2 {
+    font-weight: normal;
+    margin-bottom: 0;
+    color:white
+}
+
+.icons{
+    padding-top:15px;
+    font-size:20px
+}
+
+.icons > a{
+    padding-left:10px;
+    padding-right:10px;
+    text-decoration: none;
+}
+
+a , .nav-pills > li > a > span{
+    color:#BBB
+}
+a:hover , .nav-pills > li > a > span{
+    cursor:pointer;
+    color:white;
+    border:none
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: rgba(255 , 255 , 255 , 0.1)
+}
+
+.nav-pills > li {
+    font-size: 20px;
+}
+
+.nav-pills > li > a > span {
+    padding: 25px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, 
+.nav-pills > li.active > a:focus {
+    background-color: #00818a;
+}

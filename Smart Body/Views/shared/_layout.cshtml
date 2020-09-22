@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <!-- internet exp -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- first mobile meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+
+    <title>Smart Body - @ViewBag.Title</title>
+    <link rel="icon" href="~/Images/favIcon.png" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Animate.css" rel="stylesheet" />
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/main-form.css" rel="stylesheet" />
+    <link href="~/Content/Msg.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min"></script>
+    <![endif]-->
+
+</head>
+<body dir="ltr">
+    <!--start nav bar-->
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container-fluid navEdit">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navID">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index" , "Home")">Smart <span>Body</span></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navID">
+                <ul class="nav navbar-nav navbar-right lead">
+                    <li><a href="@Url.Action("Index" , "Home")">Home</a></li>
+                    <li class="dropdown active" id="dropdownID"> 
+                        <a href="#" class="dropdown-toggle">Services <span class="caret" style="color:white"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("book", "Service")">Book</a></li>
+                            <li><a href="@Url.Action("Ask", "Service")">Ask Coach</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Exercise", "Home")">Exercises</a></li>
+                    <li><a href="@Url.Action("AboutUs", "Home")">About US</a></li>
+                    @Html.Partial("_Account")
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- End Of NavBar -->
+
+    @RenderBody()
+
+    <!-- Start Of Footer Section -->
+    <section class="text-center">
+        <footer>
+            <div class="footerDiv footer-copyright text-center">
+                <p class="footer-P">Copyright © <script>document.write(new Date().getFullYear());</script> Smart Body <span>.Inc</span> </p>
+            </div>
+        </footer>
+    </section>
+    <!-- End Of Footer Section -->
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/html5shiv.min.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/plugins.js"></script>
+
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap'
+        });
+    </script>
+
+    <script>
+        $("#dropdownID").hover(function () {
+            $("#dropdownID").toggleClass("open");
+        });
+    </script>
+</body>
+</html>

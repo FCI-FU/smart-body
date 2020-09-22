@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "CoachSetting";
+    Layout = "~/Views/Account/_profileLayout.cshtml";
+}
+<!-- Row start -->
+<div class="row" style="width:80%;padding-left:150px;padding-top:50px">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <i class="icon-calendar"></i>
+                <h3 class="panel-title">Account Settings</h3>
+            </div>
+
+            <div class="panel-body">
+                <form class="form-horizontal row-border" action="" method="post">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Name </label>
+                        <div class="col-md-10">
+                            <input type="text" name="ownerName" disabled="disabled" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">User Name</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="usrName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Email</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="email" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Phone</label>
+                        <div class="col-md-10">
+                            <input type="text" name="phone" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-offset-3 col-md-4">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#coachPassword">Change Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="coachPassword">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color:black;font-size:50px">&times;</span></button>
+                <h4 class="modal-title">Change Password</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body">
+                    <form method="post" action="">
+                        <fieldset style="border: none;" data-role="controlgroup" data-type="horizontal">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Old Password</span>
+                                <input id="PackageName" type="password" class="form-control" placeholder="old password" aria-describedby="sizing-addon1" style="width: 600px;" />
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">New Password </span>
+                                <input id="PackagePrice" type="password" class="form-control" style="width: 600px;" placeholder="New Password" aria-describedby="sizing-addon1" />
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Repeat New Password </span>
+                                <input id="PackagePrice" type="password" class="form-control" style="width: 600px;" placeholder="Repeat New Password" aria-describedby="sizing-addon1" />
+                            </div>
+                            <br />
+                            <button id="btnAddBackage" class="btn btn-lg btn-primary btn-block">Save</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

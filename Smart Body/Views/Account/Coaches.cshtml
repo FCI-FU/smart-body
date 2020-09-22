@@ -1,0 +1,40 @@
+﻿@model Smart__Body.Models.DataPoint
+@{
+    ViewBag.Title = "Coaches";
+    Layout = "~/Views/Account/_profileLayout.cshtml";
+}
+
+<section class="text-center">
+    <div class="container-fluid price_table">
+
+        <div class="row" style="margin-left:150px">
+            @for (int i = 0; i < @ViewBag.count; i++)
+            {
+                <div class="col-sm-3 col-xs-6 wow bounceIn animated" style="border: 5px solid black; margin:10px;padding:10px" data-wow-duration="1s" data-wow-delay="0.5s">
+
+                    <div class="member">
+                        <img class="img-circle" src="~/Images/img_avatar.png " alt="Yomna" height="150" />
+                    </div>
+                    <h3>@ViewBag.Coach[i]</h3>
+                    <h5>@ViewBag.Coach[i]</h5>
+                    <h5>@ViewBag.Coach[i]</h5>
+                </div>
+            }
+
+
+            <div class="col-sm-3 col-xs-6 wow bounceIn animated" data-wow-duration="1s" data-wow-delay="0.5s" style="left:-6px">
+
+                <div class="member">
+                    <div class="price_box wow fadeInUp" data-wow-duration="2s" style="min-height:260px;min-width:250px; border:5px solid black">
+                        <h2 class="text-primary" style="color:black">Add Coach</h2>
+                        <a><p class="center-block" data-toggle="modal" data-target="#addCoach">+</p></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br />
+
+
+    </div>
+</section>

@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<div class="limiter">
+    <div class="container-login">
+        <div class="wrap-login">
+            <div class="login-form">
+                <span class="login-form-title">
+                    Welcome
+                </span>
+                <span class="login-form-title">
+                    <i class="glyphicon glyphicon-user" id="showIcon"></i>
+                </span>
+
+                <br /><br />
+                <form action="aaa" method="post">
+                    <div class="form-group">
+                        <div class="col-sm-offset-0 col-xs-offset-1 nputGroupContainer">
+                            <div class="input-group" style="width: 300px;">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input id="InputEmail" name="email" placeholder="E-Mail Address" class="form-control" type="email" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-0 col-xs-offset-1 inputGroupContainer">
+                            <div class="input-group" style="width: 300px;">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="ReInputPassword" name="confirm_password" placeholder="Confirm Password" class="form-control" type="password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-offset-0 col-xs-offset-1">
+                        <button class="btn btn-md btn-primary" type="submit" style="width:300px;" id="btn">Login</button>
+                    </div>
+
+                </form>
+
+                <div class="text-center">
+                    <span style="font-size:17px; color:black">
+                        Don’t have an account?
+                    </span>
+
+                    <a href="@Url.Action("Register" ,"Account")" style="font-size:16px; color:#BBB">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

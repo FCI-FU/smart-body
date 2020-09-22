@@ -1,0 +1,41 @@
+﻿@if (ViewBag.type == "owner")
+{
+
+    <li id="statBtn">
+        <a onclick="chart();" href="@Url.Action("GymStatistic", "Account")"><i class="fas fa-chart-line"></i><span>Statistic</span></a>
+    </li>
+
+    <li id="packBtn">
+        <a href="@Url.Action("GymPackages" , "Account")"><i class="fas fa-box-open"></i><span>Packages</span></a>
+    </li>
+    
+    <li id="coachBtn">
+        <a href="@Url.Action("GymCoaches" , "Account")"><i class="fas fa-walking"></i><span>Coaches</span></a>
+    </li>
+    
+    <li id="branchBtn">
+        <a href="@Url.Action("GymBranch" , "Account")"><i class="fas fa-store-alt"></i><span>Branches</span></a>
+    </li>
+    
+    <li id="settingOwnerBtn">
+        <a href="@Url.Action("GymSetting" , "Account")"><i class="fas fa-user-cog"></i><span>Settings</span></a>
+    </li>
+}
+else
+{
+    <li class="" id="statBtn">
+        <a href="@Url.Action("CoachStatistic" , "Account")"><i class="fas fa-chart-line"></i><span>Statistic</span></a>
+    </li>
+
+    <li id="trainingBtn">
+        <a href="@Url.Action("CoachTraning" , "Account")"><i class="fas fa-dumbbell"></i><span>Training</span></a>
+    </li>
+
+    <li id="msgBtn">
+        <a href="@Url.Action("CoachMessage", "Account")"><i class="fas fa-envelope"></i><span>Messages</span></a>
+    </li>
+
+    <li id="settingCoachBtn">
+        <a href="@Url.Action("CoachSetting", "Account")"><i class="fas fa-user-cog"></i><span>Settings</span></a>
+    </li>
+}

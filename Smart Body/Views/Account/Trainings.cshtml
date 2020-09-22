@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Trainings";
+    Layout = "~/Views/Account/_profileLayout.cshtml";
+}
+
+<div class="price_table text-center">
+
+    @for (int i = 0; i < 10; i++)
+    { 
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="price_box wow fadeInUp" data-wow-duration="2s">
+                    <h2 class="text-primary">Training</h2>
+                    <p class="center-block">2$</p>
+                    <label>Training Name</label>
+                    <br />
+                    <span style="font-size:18px;">aaaa</span>
+                    <br />
+                    <label>Coach name</label>
+                    <br />
+                    <span style="font-size:18px;">aaaa</span>
+                    <br />
+                    <label># trainees</label>
+                    <br />
+                    <span style="font-size:18px;">Aaa</span>
+                    <br />
+                    <label>Duration</label>
+                    <br />
+                    <span style="font-size:18px;">Aaaa</span>
+                    <br />
+                    <label>Description</label>
+                    <br />
+                    <span style="font-size:18px;">aaaa</span>
+                </div>
+            </div>
+
+    }
+
+    <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="price_box wow fadeInUp" data-wow-duration="2s" style="min-height:542px">
+            <h2 class="text-primary">Add Training</h2>
+            <br /><br /><br /><br /><br /><br />
+            <a><p class="center-block" data-toggle="modal" data-target="#addTraining">+</p></a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="addTraining">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color:black;font-size:50px">&times;</span></button>
+                <h4 class="modal-title">New Training details</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body">
+                    <form method="post" action="">
+                        <fieldset style="border: none;" data-role="controlgroup" data-type="horizontal">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Training Name </span>
+                                <input type="text" class="form-control" placeholder="Training Name" aria-describedby="sizing-addon1" style="width: 350px;" required />
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Number of Trainees </span>
+                                <input type="Number" class="form-control" style="width: 350px;" placeholder="999" aria-describedby="sizing-addon1" required />
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Description </span>
+                                <input type="text" class="form-control" style="width: 350px;" placeholder="999" aria-describedby="sizing-addon1" required />
+                             </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Duration</span>
+                                <input type="Number" class="form-control" style="width: 350px;" placeholder="number of days" aria-describedby="sizing-addon1" required />
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Coach Name</span>
+                                <select style="width:350px; height:45px">
+                                    @for (int i = 0; i < @ViewBag.Coaches; i++)
+                                    {
+                                        <option>@ViewBag.Coaches[i]</option>
+                                    }
+                                </select>
+
+                            </div>
+                            <br />
+                            <button id="btnAddTraining" class="btn btn-lg btn-primary btn-block">ADD Training</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

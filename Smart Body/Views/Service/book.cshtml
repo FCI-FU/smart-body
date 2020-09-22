@@ -1,0 +1,38 @@
+﻿@model Smart__Body.Models.DataPoint
+@{
+    ViewBag.Title = "book";
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+
+<div class="price_table container text-center">
+
+    @for (int i = 0; i < @ViewBag.count; i++)
+    {
+
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="price_box wow fadeInUp" data-wow-duration="2s">
+                <h2 class="text-primary">Package</h2>
+                <p class="center-block">@ViewBag.Pakcage[i].price$</p>
+                <label>Package Name</label>
+                <br />
+                <span style="font-size:18px;">@ViewBag.Pakcage[i].name</span>
+                <br />
+
+                <label></label>
+                <br />
+                <span style="font-size:18px;">.......................................</span>
+                <br />
+                <br />
+                <a href="@Url.Action("bookTrains", "services", new { id = @ViewBag.Pakcage[i].id })" class="btn btn-primary" style="padding: 10px 15px; margin-bottom: 7px;">Trainings</a>
+                <a href="" class="btn btn-danger" style="padding: 10px 15px; margin-bottom:0px">Book</a>
+            </div>
+        </div>
+
+
+    }
+
+    
+</div>
+
+
+

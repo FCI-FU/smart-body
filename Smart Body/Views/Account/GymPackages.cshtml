@@ -1,0 +1,85 @@
+﻿@model Smart__Body.Models.DataPoint
+@{
+    ViewBag.Title = "packages";
+    Layout = "~/Views/Account/_profileLayout.cshtml";
+}
+<div class="price_table container text-center" style="width:100%">
+
+    @for (int i = 0; i < @ViewBag.count; i++)
+    {
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="price_box wow fadeInUp" data-wow-duration="2s">
+                <form method="post" action="">
+                    <button type="submit" class="close" ><span aria-hidden="true" style="color:black;font-size:50px">&times;</span></button>
+                </form>
+                <form method="post" action="">
+                    <button type="button" data-toggle="modal" data-target="#addPackage" class="close" style="padding-top:7px"><span aria-hidden="true" style="color:black;font-size:30px"><i class="fas fa-edit"></i></span></button>
+                </form>
+                <h2 class="text-primary">Package</h2>
+                <p class="center-block">@ViewBag.Pakcage[i].price$</p>
+                <label>Package Name</label>
+                <br />
+                <a href="@Url.Action("PackageTrainings", "Account", new { id = @ViewBag.Pakcage[i].id })">
+                    <span style="font-size:18px;">@ViewBag.Pakcage[i].name</span>
+                </a>
+                <br />
+                <a href="@Url.Action("PackageTrainings", "Account", new { id = @ViewBag.Pakcage[i].id })" class="btn btn-primary" style="padding: 10px 10px;">Trainings</a>
+                <a href="@Url.Action("Offers", "Account", new { id = @ViewBag.Pakcage[i].id })" class="btn btn-primary" style="padding: 10px 10px;">Offers</a>
+            </div>
+        </div>
+
+    }
+
+    <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="price_box wow fadeInUp" data-wow-duration="2s" style="min-height:260px">
+            <h2 class="text-primary">Add Package</h2>
+            <a><p class="center-block" data-toggle="modal" data-target="#addPackage">+</p></a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="addPackage">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color:black;font-size:50px">&times;</span></button>
+                <h4 class="modal-title">New Package details</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body">
+                    <form method="post" action="GymPackages">
+                        <fieldset style="border: none;" data-role="controlgroup" data-type="horizontal">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Package Name </span>
+                                <input type="text" name="packageName" class="form-control" placeholder="Package Name" aria-describedby="sizing-addon1" style="width: 350px;" />
+                            </div>
+                            <br />
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon" style="width: 200px;">Package Price </span>
+                                <input type="Number" name="packagePrice" class="form-control" style="width: 350px;" placeholder="999" aria-describedby="sizing-addon1" />
+                            </div>
+                            <br />
+                            <button id="btnAddBackage" class="btn btn-lg btn-primary btn-block">ADD Package</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+@if (ViewBag.errorMessag != null)
+{
+    <script>
+        window.onload = function () {
+            alert("@ViewBag.errorMessag");
+        }
+    </script>
+}

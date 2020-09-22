@@ -1,0 +1,297 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Profile</title>
+    <link rel="icon" href="~/Images/favIcon.png" />
+    <link href="~/Content/Animate.css" rel="stylesheet" />
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/Msg.css" rel="stylesheet" />
+    <link href="~/Content/profile.css" rel="stylesheet" />
+</head>
+<body>
+    <!--start nav bar-->
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container-fluid navEdit">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" id="navBtn">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index" , "Home")">Smart <span>Body</span></a>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-2 sidebar">
+                <header class="avatar">
+                    <img class="img-circle" src="~/Images/avatar.png" alt="Hasan" height="150" />
+                    <h2>@ViewBag.Name</h2>
+                    <div class="icons">
+                        <a href="" class="bell">
+                            <i class="fa fa-bell"></i>
+                        </a>
+                        <a href="" class="off">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul class="nav nav-pills nav-stacked">
+                    @Html.Partial("_sideContent")
+                </ul>
+            </div>
+
+            <div class="col-md-10 col-md-offset-2 content">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Start Of Footer Section -->
+    <section class="text-center container-fluid">
+        <footer>
+            <div class="footerDiv footer-copyright text-center">
+                <p class="footer-P">
+                    Copyright ©
+                    <script>document.write(new Date().getFullYear());</script> Smart Body <span>.Inc</span>
+                </p>
+            </div>
+        </footer>
+    </section>
+    <!-- End Of Footer Section -->
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script src="~/Scripts/profileAnimation.js"></script>
+    <script src="~/Scripts/ZingChart/zingchart.min.js"></script>
+    <script>
+        var ids1 = ["#stat", '#pack', "#coach", "#branch", "#settingOwner"];
+        var ids2 = ["#stat", "#training", "#msg", "#settingCoach"];
+        $(window).ready(function () {
+            if('@ViewBag.type' == "owner")
+                chart();
+            else
+                chartC();
+            console.log('@ViewBag.type' == 'owner');
+            showHide(parseInt('@ViewBag.Page'), '@ViewBag.type' == 'owner');
+        });
+        function showHide(idx, flag) {
+            var Ids = []
+            if (flag == 1)
+                Ids = ids1;
+            else if (flag == 0)
+                Ids = ids2;
+
+            for (var i = 0 ; i < Ids.length ; i++)
+                if (i == idx) {
+                    $(Ids[i] + "Btn").addClass("active");
+                }
+                else {
+                    $(Ids[i] + "Btn").removeClass("active");
+                }
+        }
+    </script>
+
+    <script>
+        function chart() {
+            var point = [{ x: new Date(2015, 02, 1), y: 10 }, { x: new Date(2015, 05, 1), y: 15 }, { x: new Date(2015, 08, 1), y: 20 }];
+            var chartData = {
+                "type": "area",
+                "utc": true,
+                "title": {
+                    "text": "Gym trainees statistics",
+                    "fontSize": 20
+                },
+                "plot": {
+                    "animation": {
+                        "delay": "100",
+                        "effect": "4",
+                        "method": "5",
+                        "sequence": "1"
+                    }
+                },
+                "series": [{ "values": [["20/10/2018", 35], ["20/10/2019", 42], ["20/10/2020", 67], ["20/10/2021", 89]] }
+                ]
+            };
+            zingchart.render({ // Render Method[3]
+                id: 'lineChart',
+                data: chartData,
+                height: 400,
+                width: 600
+            });
+            //circle chart
+            var myConfig = {
+                "graphset": [
+                    {
+                        "type": "pie",
+                        plot: {
+                            borderColor: "#2B313B",
+                            borderWidth: 2,
+                            // slice: 90,
+                            valueBox: {
+                                placement: 'out',
+                                text: '%t\n%npv%',
+                                fontFamily: "Open Sans"
+                            },
+                            tooltip: {
+                                fontSize: '18',
+                                fontFamily: "Open Sans",
+                                padding: "5 10",
+                                text: "%npv%"
+                            },
+                            animation: {
+                                effect: 2,
+                                method: 5,
+                                speed: 800,
+                                sequence: 1
+                            }
+                        },
+                        title: {
+                            fontColor: "#fff",
+                            text: 'Trainees in packages',
+                            offsetX: 10,
+                            fontFamily: "Open Sans",
+                            fontSize: 25
+                        },
+                        "series": [
+                            {
+                                "values": [34],
+                                text: "abdalrahman"
+                            },
+                            {
+                                "values": [186],
+                                text: "abdalrahman"
+                            },
+                            {
+                                "values": [245],
+                                text: "abdalrahman"
+                            },
+                            {
+                                "values": [191],
+                                text: "abdalrahman"
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            zingchart.render({
+                id: 'circleChart',
+                data: myConfig,
+                height: 400,
+                width: 600
+            });
+
+        }
+
+        function chartC() {
+            var point = [{ x: new Date(2015, 02, 1), y: 10 }, { x: new Date(2015, 05, 1), y: 15 }, { x: new Date(2015, 08, 1), y: 20 }];
+            var chartData = {
+                "type": "area",
+                "utc": true,
+                "title": {
+                    "text": "trainings statistics",
+                    "fontSize": 20
+                },
+                "plot": {
+                    "animation": {
+                        "delay": "100",
+                        "effect": "4",
+                        "method": "5",
+                        "sequence": "1"
+                    }
+                },
+                "series": [{ "values": [["20/10/2018", 35], ["20/10/2019", 42], ["20/10/2020", 67], ["20/10/2021", 89]] }
+                ]
+            };
+            zingchart.render({ // Render Method[3]
+                id: 'lineChartC',
+                data: chartData,
+                height: 400,
+                width: 600
+            });
+            //circle chart
+            var myConfig = {
+                "graphset": [
+                    {
+                        "type": "pie",
+                        plot: {
+                            borderColor: "#2B313B",
+                            borderWidth: 2,
+                            // slice: 90,
+                            valueBox: {
+                                placement: 'out',
+                                text: '%t\n%npv%',
+                                fontFamily: "Open Sans"
+                            },
+                            tooltip: {
+                                fontSize: '18',
+                                fontFamily: "Open Sans",
+                                padding: "5 10",
+                                text: "%npv%"
+                            },
+                            animation: {
+                                effect: 2,
+                                method: 5,
+                                speed: 800,
+                                sequence: 1
+                            }
+                        },
+                        title: {
+                            fontColor: "#fff",
+                            text: 'Trainees in packages',
+                            offsetX: 10,
+                            fontFamily: "Open Sans",
+                            fontSize: 25
+                        },
+                        "series": [
+                            {
+                                "values": [34],
+                                text: "abdalrahman"
+                            },
+                            {
+                                "values": [186],
+                                text: "abdalrahman"
+                            },
+                            {
+                                "values": [245],
+                                text: "abdalrahman"
+                            },
+                            {
+                                "values": [191],
+                                text: "abdalrahman"
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            zingchart.render({
+                id: 'circleChartC',
+                data: myConfig,
+                height: 400,
+                width: 600
+            });
+
+        }
+    </script>
+
+</body>
+</html>
